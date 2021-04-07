@@ -25,10 +25,12 @@
 -- Downloaded from http://rochet2.github.io/
 -- Bugs and contact with E-mail: Rochet2@post.com
 --
+-- 2021.04.07:
+--			Update to latest AC database by Anhedonie
 -- ################################################################################### --
 */
 
-USE dev_world;
+USE world;
 
 SET
 @ENTRY          := 190000,
@@ -45,9 +47,9 @@ SET
 -- --------------------------------------------------------------------------------------
 DELETE FROM creature_template WHERE entry = @ENTRY;
 DELETE FROM creature_template_addon WHERE Entry = @ENTRY ;
-DELETE FROM gossip_menu WHERE entry BETWEEN @GOSSIP_MENU AND @GOSSIP_MENU+9;
+DELETE FROM gossip_menu WHERE menuid BETWEEN @GOSSIP_MENU AND @GOSSIP_MENU+9;
 DELETE FROM npc_text WHERE ID BETWEEN @TEXT_ID AND @TEXT_ID+5;
-DELETE FROM gossip_menu_option WHERE menu_id BETWEEN @GOSSIP_MENU AND @GOSSIP_MENU+9;
+DELETE FROM gossip_menu_option WHERE menuid BETWEEN @GOSSIP_MENU AND @GOSSIP_MENU+9;
 DELETE FROM smart_scripts WHERE entryorguid = @ENTRY AND source_type = 0;
 DELETE FROM conditions WHERE (SourceTypeOrReferenceId = 15 OR SourceTypeOrReferenceId = 14) AND SourceGroup BETWEEN @GOSSIP_MENU AND @GOSSIP_MENU+9;
 DELETE from creature WHERE ID = @ENTRY;
@@ -62,7 +64,7 @@ INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_
 -- --------------------------------------------------------------------------------------
 -- Teleporter aura
 -- --------------------------------------------------------------------------------------
-INSERT INTO creature_template_addon (entry, mount, bytes1, bytes2, emote, path_id, auras) VALUES (@ENTRY, 0, 0, 0, 0, 0, @AURA);
+INSERT INTO creature_template_addon (entry, mount, bytes1, bytes2, emote, path_id, isLarge, auras) VALUES (@ENTRY, 0, 0, 0, 0, 0, 0, @AURA);
 
 -- --------------------------------------------------------------------------------------
 -- Gossip header text link to menus
@@ -620,7 +622,7 @@ INSERT INTO smart_scripts (entryorguid, source_type, id, link, event_type, event
 -- Teleporter Spawns
 -- --------------------------------------------------------------------------------------
 ALTER TABLE creature AUTO_INCREMENT = 200000;
-INSERT INTO creature (id, map, spawnMask, phaseMask, modelid, position_x, position_y, position_z, orientation, spawntimesecs, spawndist, curhealth, curmana) VALUES
+INSERT INTO creature (id, map, spawnMask, phaseMask, modelid, position_x, position_y, position_z, orientation, spawntimesecs, wander_distance, curhealth, curmana) VALUES
 (@ENTRY, 0, 1, 1, 0, -13180.5, 342.503, 43.1936, 4.32977, 25, 0, 13700, 6540), 
 (@ENTRY, 530, 1, 1, 0, -3862.69, -11645.8, -137.629, 2.38273, 25, 0, 13700, 6540), 
 (@ENTRY, 0, 1, 1, 0, -4898.37, -965.118, 501.447, 2.25986, 25, 0, 13700, 6540), 

@@ -18,6 +18,8 @@
 -- 
 -- Note: These vendors are placed by importing world_npc_spawn.sql.
 --
+-- 2021.04.07:
+--			Update to latest AC database by Anhedonie
 -- ################################################################################### --
 
 -- --------------------------------------------------------------------------------------
@@ -78,7 +80,7 @@
 -- 601036 - Bengal Tiger Handler
 */ 
 
-USE dev_world;
+USE world;
 
 -- --------------------------------------------------------------------------------------
 --	EXOTIC PET VENDOR - 601000
@@ -103,7 +105,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -285,7 +287,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -358,7 +360,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -471,13 +473,13 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
 -- NPC EQUIPPED
 DELETE FROM `creature_equip_template` WHERE `CreatureID`=@Entry AND `ID`=1;
-INSERT INTO `creature_equip_template` VALUES (@Entry, 1, 14824, 0, 0, 18019); -- War Axe, None
+INSERT INTO `creature_equip_template` (`CreatureID`, `ID`, `ItemID1`, `ItemID2`, `ItemID3`, `VerifiedBuild`) VALUES (@Entry, 1, 14824, 0, 0, 18019); -- War Axe, None
 
 -- NPC ITEMS
 DELETE FROM npc_vendor WHERE entry = @Entry;
@@ -548,13 +550,13 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
 -- NPC EQUIPPED
 DELETE FROM `creature_equip_template` WHERE `CreatureID`=@Entry AND `ID`=1;
-INSERT INTO `creature_equip_template` VALUES (@Entry, 1, 13612, 0, 0, 18019);
+INSERT INTO `creature_equip_template` (`CreatureID`, `ID`, `ItemID1`, `ItemID2`, `ItemID3`, `VerifiedBuild`) VALUES (@Entry, 1, 13612, 0, 0, 18019);
 
 -- NPC ITEMS
 DELETE FROM npc_vendor WHERE entry = @Entry;
@@ -728,13 +730,13 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
 -- NPC EQUIPPED
 DELETE FROM `creature_equip_template` WHERE `CreatureID`=@Entry AND `ID`=1;
-INSERT INTO `creature_equip_template` VALUES (@Entry, 1, 45991, 34484, 0, 18019); -- Fishing Pole, Old Ironjaw
+INSERT INTO `creature_equip_template` (`CreatureID`, `ID`, `ItemID1`, `ItemID2`, `ItemID3`, `VerifiedBuild`) VALUES (@Entry, 1, 45991, 34484, 0, 18019); -- Fishing Pole, Old Ironjaw
 
 -- NPC ITEMS
 DELETE FROM npc_vendor WHERE entry = @Entry;
@@ -805,7 +807,7 @@ INSERT INTO npc_vendor (entry, item) VALUES
 -- CLEAN UP FISHERMAN WAYPOINTS
 -- --------------------------------------------------------------------------------------
 DELETE FROM `creature_addon` WHERE `guid`=1994210;
-DELETE FROM `db_script_string` WHERE entry >= 2000006050 AND entry <= 2000006052;
+DELETE FROM `acore_string` WHERE entry >= 2000006050 AND entry <= 2000006052;
 DELETE FROM `waypoint_scripts` WHERE guid >= 938 AND guid <= 941;
 DELETE FROM `creature` WHERE guid >= 1995303 AND guid <= 1995315;
 DELETE FROM `waypoint_data` WHERE id = 1994210 AND point <= 13;
@@ -813,16 +815,16 @@ DELETE FROM `waypoint_data` WHERE id = 1994210 AND point <= 13;
 -- --------------------------------------------------------------------------------------
 -- FISHERMAN CREATURE ADDON
 -- --------------------------------------------------------------------------------------
-INSERT INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (1994210, 1994210, 0, 0, 0, 0, NULL);
+INSERT INTO `creature_addon` (`guid`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `isLarge`, `auras`) VALUES (1994210, 1994210, 0, 0, 0, 0, 0, NULL);
 
 -- --------------------------------------------------------------------------------------
 -- FISHERMAN WAYPOINT STRINGS
 -- --------------------------------------------------------------------------------------
-INSERT INTO `db_script_string` (`entry`, `content_default`, `content_loc1`, `content_loc2`, `content_loc3`, `content_loc4`, `content_loc5`, `content_loc6`, `content_loc7`, `content_loc8`) 
+INSERT INTO `acore_string` (`entry`, `content_default`, `locale_koKR`, `locale_frFR`, `locale_deDE`, `locale_zhCN`, `locale_zhTW`, `locale_esES`, `locale_esMX`, `locale_ruRU`) 
 VALUES 
-(2000006050, 'Ahh.. the sea. Once it casts its spell, it holds one in its net of wonder forever.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2000006051, 'Many men go fishing all of their lives without knowing that it is not fish they are after.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2000006052, 'I wonder if they ever found that hidden treasure buried on the Isle of Dread?', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(2000006050, 'Ahh.. the sea. Once it casts its spell, it holds one in its net of wonder forever.', NULL, NULL, 'Ahh.. die See. Hat sie einen einmal im Netz, lässt sie einen nie wieder los.', NULL, NULL, NULL, NULL, NULL),
+(2000006051, 'Many men go fishing all of their lives without knowing that it is not fish they are after.', NULL, NULL, 'Viele Männer fischen ihr Leben lang - ohne zu wissen, dass es nicht der Fisch ist, hinter dem sie her sind.', NULL, NULL, NULL, NULL, NULL),
+(2000006052, 'I wonder if they ever found that hidden treasure buried on the Isle of Dread?', NULL, NULL, 'Ich wundere mich, ob sie jemals diesen versteckten Schatz auf der Insel des Schreckens gefunden haben?', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------------------------------------
 -- FISHERMAN WAYPOINT SCRIPTS
@@ -837,7 +839,7 @@ VALUES
 -- --------------------------------------------------------------------------------------
 -- FISHERMAN WAYPOINT GUID
 -- --------------------------------------------------------------------------------------
-INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`) 
+INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`) 
 VALUES 
 (1995315, 1, 1, 1, 1, 0, 0, -10749, 2517.63, 1.60554, 1.43331, 300, 0, 0, 41, 0, 0, 0, 33554432, 0),
 (1995314, 1, 1, 1, 1, 0, 0, -10700.2, 2523.61, 0.792882, 1.43331, 300, 0, 0, 41, 0, 0, 0, 33554432, 0),
@@ -903,13 +905,13 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
 -- NPC EQUIPPED
 DELETE FROM `creature_equip_template` WHERE `CreatureID`=@Entry AND `ID`=1;
-INSERT INTO `creature_equip_template` VALUES (@Entry, 1, 1906, 0, 0, 18019); -- Torch, None
+INSERT INTO `creature_equip_template` (`CreatureID`, `ID`, `ItemID1`, `ItemID2`, `ItemID3`, `VerifiedBuild`) VALUES (@Entry, 1, 1906, 0, 0, 18019); -- Torch, None
 
 -- NPC ITEMS
 DELETE FROM npc_vendor WHERE entry = @Entry;
@@ -1015,7 +1017,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1070,7 +1072,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1136,7 +1138,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1177,7 +1179,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1320,7 +1322,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1356,13 +1358,13 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
 -- NPC EQUIP
 DELETE FROM `creature_equip_template` WHERE `CreatureID`=@Entry AND `ID`=1;
-INSERT INTO `creature_equip_template` VALUES (@Entry, 1, 2884, 0, 0, 18019); -- Dynamite Stick, None
+INSERT INTO `creature_equip_template` (`CreatureID`, `ID`, `ItemID1`, `ItemID2`, `ItemID3`, `VerifiedBuild`) VALUES (@Entry, 1, 2884, 0, 0, 18019); -- Dynamite Stick, None
 
 -- NPC VENDOR ITEMS
 DELETE FROM npc_vendor WHERE entry = @Entry;
@@ -1413,7 +1415,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1441,7 +1443,7 @@ SET
 @Script 	:= "All_Mounts_NPC";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1471,13 +1473,13 @@ SET
 @Script 	:= "npc_enchantment";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
 -- NPC EQUIPPED
 DELETE FROM `creature_equip_template` WHERE `CreatureID`=@Entry AND `ID`=1;
-INSERT INTO `creature_equip_template` VALUES (@Entry, 1, 11343, 0, 0, 18019); -- Black/Purple Staff, None
+INSERT INTO `creature_equip_template` (`CreatureID`, `ID`, `ItemID1`, `ItemID2`, `ItemID3`, `VerifiedBuild`) VALUES (@Entry, 1, 11343, 0, 0, 18019); -- Black/Purple Staff, None
 
 -- NPC TEXT
 DELETE FROM `npc_text` WHERE `ID`=@Entry;
@@ -1511,7 +1513,7 @@ SET
 @Script 	:= "buff_npc";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1542,7 +1544,7 @@ SET
 @Script 	:= "gamble_npc";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1572,7 +1574,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1644,7 +1646,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1692,7 +1694,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1843,7 +1845,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -1940,7 +1942,7 @@ SET
 @Script 	:= "BeastMaster";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -2043,7 +2045,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -2078,7 +2080,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -2246,7 +2248,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -2273,7 +2275,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -2303,7 +2305,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, unit_flags2, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, @UnitClass, @UnitFlags, @UnitFlags2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -2463,7 +2465,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, unit_flags2, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, @UnitClass, @UnitFlags, @UnitFlags2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -2644,7 +2646,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -2675,7 +2677,7 @@ SET
 @Script 	:= "GMIsland_Theme_Generator";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -2706,7 +2708,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 
@@ -2715,8 +2717,8 @@ DELETE FROM `npc_text` WHERE `ID` = @Entry;
 INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`, `lang0`, `Probability0`, `em0_0`, `em0_1`, `em0_2`, `em0_3`, `em0_4`, `em0_5`, `text1_0`, `text1_1`, `lang1`, `Probability1`, `em1_0`, `em1_1`, `em1_2`, `em1_3`, `em1_4`, `em1_5`, `text2_0`, `text2_1`, `lang2`, `Probability2`, `em2_0`, `em2_1`, `em2_2`, `em2_3`, `em2_4`, `em2_5`, `text3_0`, `text3_1`, `lang3`, `Probability3`, `em3_0`, `em3_1`, `em3_2`, `em3_3`, `em3_4`, `em3_5`, `text4_0`, `text4_1`, `lang4`, `Probability4`, `em4_0`, `em4_1`, `em4_2`, `em4_3`, `em4_4`, `em4_5`, `text5_0`, `text5_1`, `lang5`, `Probability5`, `em5_0`, `em5_1`, `em5_2`, `em5_3`, `em5_4`, `em5_5`, `text6_0`, `text6_1`, `lang6`, `Probability6`, `em6_0`, `em6_1`, `em6_2`, `em6_3`, `em6_4`, `em6_5`, `text7_0`, `text7_1`, `lang7`, `Probability7`, `em7_0`, `em7_1`, `em7_2`, `em7_3`, `em7_4`, `em7_5`, `VerifiedBuild`) VALUES (@Entry, 'Greetings $N. Lucky you.. You\'ve arrived at just the right time.', NULL, 0, 0, 0, 6, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 1);
 
 -- Gossip Menu
-DELETE FROM `dev_world`.`gossip_menu` WHERE `entry` = @GossipMenu;
-INSERT INTO `dev_world`.`gossip_menu` (`entry`, `text_id`) VALUES (@GossipMenu, @Entry);
+DELETE FROM `world`.`gossip_menu` WHERE `MenuID` = @GossipMenu;
+INSERT INTO `world`.`gossip_menu` (`MenuID`, `TextID`) VALUES (@GossipMenu, @Entry);
 
 -- Gossip Menu Option
 DELETE FROM `gossip_menu_option` WHERE `MenuId` = @GossipMenu;
@@ -2731,7 +2733,7 @@ INSERT INTO smart_scripts (`entryorguid`, `source_type`, `id`, `link`, `event_ty
 INSERT INTO smart_scripts (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`) VALUES (@Entry, 0, 2, 0, 62, 0, 100, 0, @GossipMenu, 2, 0, 0, 11, @Spell3, 2, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, '');
 
 -- Update Reins of the Bengal Tiger requirements
-UPDATE `dev_world`.`item_template` SET `RequiredLevel`='1', `RequiredSkill`='150', `RequiredSkillRank`='1', `maxcount`='1' WHERE (`entry`='8630');
+UPDATE `world`.`item_template` SET `RequiredLevel`='1', `RequiredSkill`='150', `RequiredSkillRank`='1', `maxcount`='1' WHERE (`entry`='8630');
 
 -- --------------------------------------------------------------------------------------
 --	HEIRLOOM VENDOR - 601704
@@ -2756,7 +2758,7 @@ SET
 @Script 	:= "";
 
 -- NPC
-DELETE FROM creature_template WHERE entry = @Entry;
+DELETE FROM creature_template where entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, rank, unit_class, unit_flags, type, type_flags, InhabitType, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 3, 1, @FlagsExtra, @AIName, @Script);
 

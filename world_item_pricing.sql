@@ -21,10 +21,12 @@
 -- to 5 (Snowballs) that has a `sellprice` of 2 silver should have the `buyprice` 
 -- set to 10 silver. This avoids buy low/sell high price exploits!
 -- 
+-- 2021.04.07:
+--			Update to latest AC database by Anhedonie
 -- ################################################################################### --
 */
 
-USE dev_world;
+USE world;
 
 -- --------------------------------------------------------------------------------------
 --	CURRENCY CONVERSION

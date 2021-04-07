@@ -31,6 +31,8 @@
 -- 			Town portals replaced with Portal master from npc_portalmaster.sql
 -- 2018.12.28:
 --			Randomize NPC models
+-- 2021.04.07:
+--			Update to latest AC database by Anhedonie
 -- ################################################################################### --
 --
 -- VENDOR NPC ID 	- 601500 - 601703
@@ -59,7 +61,7 @@
 -- ################################################################################### --
 */
 
-USE dev_world;
+USE world;
 
 -- --------------------------------------------------------------------------------------
 -- Table structure for npc_gmisland_models
