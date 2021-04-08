@@ -13494,6 +13494,7 @@ REPLACE INTO `npc_trainer` (`ID`,`SpellID`,`MoneyCost`,`ReqSkillLine`,`ReqSkillR
 -- ############################################################################################################--
 --	GM-ISLAND NPC SPAWN POINTS
 -- ############################################################################################################--
+
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`) VALUES (601500, 601500, 1, 1, 1, 0, 0, 16297.4, 16244.5, 24.8233, 0.791318, 25, 0, 0, 1000000, 260150, 0, 0, 0, 0);
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`) VALUES (601501, 601501, 1, 1, 1, 0, 0, 16221.7, 16275.9, 20.9251, 1.27072, 25, 0, 0, 1000000, 260150, 0, 0, 0, 0);
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`) VALUES (601502, 601502, 1, 1, 1, 0, 0, 16269.2, 16306, 14.1796, 6.1893, 25, 0, 0, 1000000, 260150, 0, 0, 0, 0);
@@ -13696,6 +13697,7 @@ INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`) VALUES (601701, 601701, 1, 1, 1, 0, 0, 16205.9, 16323.1, 18.2392, 0.738983, 300, 0, 0, 5342, 0, 0, 0, 0, 0);
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`) VALUES (601702, 601702, 1, 1, 1, 0, 0, 16206.5, 16319.1, 18.1171, 0.248097, 300, 0, 0, 5342, 0, 0, 0, 0, 0);
 INSERT INTO `creature` (`guid`, `id`, `map`, `spawnMask`, `phaseMask`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`) VALUES (601703, 601703, 1, 1, 1, 0, 0, 16206.4, 16315.4, 17.7365, 6.16215, 300, 0, 0, 5342, 0, 0, 0, 0, 0);
+
 -- ############################################################################################################--
 --	TWINK VENDOR SETTINGS
 -- ############################################################################################################--
@@ -13712,4 +13714,3 @@ UPDATE `item_template` SET `ItemLevel`=19, `RequiredLevel`=19, `RequiredSkill`=0
 UPDATE `item_template` SET `ItemLevel`=19, `RequiredLevel`=19, `RequiredSkill`=0, `RequiredSkillRank`=0 WHERE `entry`=29472;
 UPDATE `item_template` SET `ItemLevel`=19, `RequiredLevel`=19, `RequiredSkill`=0, `RequiredSkillRank`=0 WHERE `entry`=34129;
 
--- which came first; the chicken or the egg?

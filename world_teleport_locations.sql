@@ -39,7 +39,7 @@ INSERT INTO `world`.`game_tele` (`id`, `position_x`, `position_y`, `position_z`,
 -- --------------------------------------------------------------------------------------
 INSERT INTO `world`.`game_tele` (`id`, `position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES ('1471', '16302.5', '16220.3', '69', '1.5394', '451', 'programisle');
 INSERT INTO `world`.`game_tele` (`id`, `position_x`, `position_y`, `position_z`, `orientation`, `map`, `name`) VALUES ('1470', '16303', '-16173', '40', '0.361313', '451', 'designisle'); 
--- --------------------------------------------------------------------------------------
+
 
 -- --------------------------------------------------------------------------------------
 -- Emerald Dream (Requires an Updated MAP.DBC file on the server)

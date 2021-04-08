@@ -71,7 +71,6 @@ CREATE TABLE `npc_gmisland_models` (
   `modelid1` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
 -- --------------------------------------------------------------------------------------
 -- Records of  npc_gmisland_models
 -- --------------------------------------------------------------------------------------
