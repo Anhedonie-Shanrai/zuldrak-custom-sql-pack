@@ -14,3 +14,5 @@ Also adds custom .tele locations and custom pricing for some items.
 ## For reference also look: 
 *  https://stygianthebest.github.io/projects/server-stygiancore/ 
 *  https://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-servers/wow-emu-general-releases/771978-azerothcore-stygiancore-solo-lan-3-3-5a-repack-eluna.html
+*  https://www.azerothcore.org/
+*  https://github.com/AzerothCore/
